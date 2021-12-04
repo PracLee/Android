@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.firstapp">
+    <!--
+        allowBackup : 앱 삭제시 유저데이터를 로컬에 저장해 놓을것인지
+        icon : 앱 생성시 표시되는 아이콘의 파일 위치 ** @ == 리소스 폴더
+        label : 안드로이드의 App 이름 설정
+        roundIcon : 둥근 아이콘 파일 위치
+        supportsRtl : 언어가 오른쪽에서 왼쪽으로 읽는 국가의 경우 언어표시를 지원한는지 여부
+        theme : 테마, 색상 설정파일 지정
+    -->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FirstApp">
+        <!--
+            activity : 화면 구성
+            name : 정의된 이름의 파일을 사용하여 화면을 구성
+            exported : activity 끼리 화면 전환이 가능하도록 구성
+        -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <!--
+                intent-filter : activity 에 intent-filter 가 정의되어 있을 경우,
+                main activity (main 화면) 됨
+            -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
