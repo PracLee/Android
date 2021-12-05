@@ -6,33 +6,35 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.android.firstapp"
-        minSdk 23
-        targetSdk 31
-        versionCode 1
-        versionName "1.0"
+        applicationId "com.android.firstapp"    // 어플리케이션 ID
+        minSdk 22                               // 이 어플리케이션을 사용할 수 있는 최소 AndroidVersion(24Version 많이 사용), 어플리케이션 소스 작성시 Sdk의 호환성을 고려해서 개발
+        targetSdk 31                            // 안드로이드 버전 업그레이드시 레이아웃 변경이 되지않게 함
+        versionCode 1                           // 내부 버전 번호 (높을 수록 최신 버전)
+        versionName "1.0"                       // 사용자들에게 표시되는 앱 버젼
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        // testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner" // Junit 단위테스트 설정
     }
 
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            minifyEnabled false                 // 어플리케이션 빌드 후 난독화 설정 : true 난독화(소스 비공개), false 비난독화(소스 공개)
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro' // 난독화를 위한 규칙이 정의되어 있는 파일
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_15 // 소스에 대한 버전 유효성 검사를 실행하는 jdk version
+        targetCompatibility JavaVersion.VERSION_15 // 클래스 파일에 대한 버전 유효성 검사를 실행하는 jdk version
     }
 }
-
+// 라이브러리 설정
 dependencies {
 
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.3.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    testImplementation 'junit:junit:4.+'
+    implementation 'androidx.appcompat:appcompat:1.2.0'                 // 안드로이드 UI가 버전이 올라감에 따라 이전 버전의 UI를 지원하지 않는 경우, 안드로이드 내부 [ appcompat ]을 지원하도록 하는 라이브러리
+    implementation 'com.google.android.material:material:1.3.0'         // 안드로이드 디자인을 대상으로 하는 라이브러리
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'   // 안드로이드 화면 구성에 대해 계층 구조를 지원하는 [ constraintlayout ]을 포함
+
+    // 단위테스트에 사용하는 라이브러리
+   /* testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'*/
 }

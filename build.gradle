@@ -2,16 +2,16 @@
 buildscript {
     repositories {
         google()
-        mavenCentral()
+        mavenCentral()      // 라이브러리 설정
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:7.0.3"
+        classpath "com.android.tools.build:gradle:7.0.2"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
 }
 
-task clean(type: Delete) {
+task clean(type: Delete) {  // 클린작업을 할때 어떤 작업을 할껀지 정의
     delete rootProject.buildDir
 }

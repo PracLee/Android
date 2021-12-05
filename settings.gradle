@@ -1,4 +1,4 @@
-dependencyResolutionManagement {
+dependencyResolutionManagement {    // 프로젝트를 관리하기 위한 properties
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
